@@ -1,8 +1,21 @@
-<div class="widget center">
-    
-  <div class="text center">
-    <h1 class="">Live CSS Blur</h1>
-    <p>Go ahead, resize me.</p>
-  </div>
-
+<div class="container " style="background: rgba(0, 0, 0, 0.4);">
+  <h2>Users with Subdomains</h2>
+    <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Serial no.</th>
+        <th>Email</th>
+        <th>Subdomain</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%@user.each do |user|%>  <tr>
+          <td><%= user.id%></td>
+          <td><%=user.email%></td>
+          <td><a href="<%= user.subdomain%>.lvh.me:3000"><%= user.subdomain%></a></td>
+        </tr>
+      <%end%>
+    </tbody>
+  </table>
 </div>
+
